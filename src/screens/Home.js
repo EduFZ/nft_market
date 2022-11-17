@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 import { Colors } from "../shared/DesignTokens";
 import { Header } from "./../common-components/Header/Header";
 import BgImg from "./../assets/images/Background.png";
@@ -9,6 +10,12 @@ import ImgLogo1 from "./../assets/icons/Logo1.png";
 import ImgLogo2 from "./../assets/icons/Logo2.png";
 import LogoTypes from "./../assets/icons/Logotypes.png";
 import { HeadlineFour } from "./../common-components/Descriptions/HeadlineFour";
+import { Cards } from '../common-components/Cards/Cards';
+import { imgCard1 } from "./../assets/icons/ImageCard1.png";
+import { imgCard2 } from "./../assets/icons/ImageCard2.png";
+import { imgCard3 } from "./../assets/icons/ImageCard3.png";
+import { imgCard4 } from "./../assets/icons/ImageCard4.png";
+import { imgCard5 } from "./../assets/icons/ImageCard5.png";
 
 const Body = styled.div`
     width: 100%;
@@ -95,20 +102,44 @@ const TitleTwo = styled.span`
     display: flex;
     justify-content: center;
     align-items: 45px;
+    border: 1px solid white;
 `;
 
 const DivCards = styled.div`
     width: 100%;
     height: 767px;
     display: flex;
+    border: 1px solid white;
 `;
+
+const imagesCard = [
+    {
+        src: imgCard1,
+    },
+    {
+        src: imgCard2,
+    },
+    {
+        src: imgCard3,
+    },
+    {
+        src: imgCard4,
+    },
+    {
+        src: imgCard5,
+    },
+]
 
 
 
 
 export function Home() {
+    const [images, src] = React.useState(imagesCard);
     return (
         <div>
+
+            
+
             <Body>
                 <Header />
                 <BodyTitle>
@@ -140,6 +171,16 @@ export function Home() {
                 <TitleTwo>
                     <HeadlineFour>Latest live auctions</HeadlineFour>
                 </TitleTwo>
+
+                <DivCards>
+                    
+                        {imagesCard.map((imgC) => (
+                            <Cards>
+                                src={imgC.imagesCard}
+                            </Cards>
+                        ))}
+                    
+                </DivCards>
 
             </Body>
         </div>
