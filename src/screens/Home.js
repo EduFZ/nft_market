@@ -11,11 +11,11 @@ import ImgLogo2 from "./../assets/icons/Logo2.png";
 import LogoTypes from "./../assets/icons/Logotypes.png";
 import { HeadlineFour } from "./../common-components/Descriptions/HeadlineFour";
 import { Cards } from '../common-components/Cards/Cards';
-import { imgCard1 } from "./../assets/icons/ImageCard1.png";
-import { imgCard2 } from "./../assets/icons/ImageCard2.png";
-import { imgCard3 } from "./../assets/icons/ImageCard3.png";
-import { imgCard4 } from "./../assets/icons/ImageCard4.png";
-import { imgCard5 } from "./../assets/icons/ImageCard5.png";
+// import imgCard1 from "./../assets/images/ImageCard1.png";
+import imgCard2 from './../assets/images/ImageCard2.png';
+// import imgCard3 from "./../assets/images/ImageCard3.png";
+// import imgCard4 from "./../assets/images/ImageCard4.png";
+// import imgCard5 from "./../assets/images/ImageCard5.png";
 
 const Body = styled.div`
     width: 100%;
@@ -25,7 +25,7 @@ const Body = styled.div`
     background-repeat: no-repeat;
 `;
 
-const BodyTitle = styled.div `
+const BodyTitle = styled.div`
     width: 100%;
     margin: 165px 0 0 0;
     display: flex;
@@ -72,12 +72,12 @@ const TextTwo = styled.span`
     margin: 37px 0 0 0;
 `;
 
-const Img1 = styled.img.attrs({src: ImgLogo1, alt: 'Logotipo NFt Market'})`
+const Img1 = styled.img.attrs({ src: ImgLogo1, alt: 'Logotipo NFt Market' })`
     width: 40px;
     height: 91px;
 `;
 
-const Img2 = styled.img.attrs({src: ImgLogo2, alt: 'Logotipo NFt Market'})`
+const Img2 = styled.img.attrs({ src: ImgLogo2, alt: 'Logotipo NFt Market' })`
     width: 62px;
     height: 62px;
 `;
@@ -91,7 +91,7 @@ const DivLogos = styled.div`
     align-items: center;
 `;
 
-const Logos = styled.img.attrs({src: LogoTypes, alt: 'Logomarcas'})`
+const Logos = styled.img.attrs({ src: LogoTypes, alt: 'Logomarcas' })`
     height: 45px;
 `;
 
@@ -112,33 +112,14 @@ const DivCards = styled.div`
     border: 1px solid white;
 `;
 
-const imagesCard = [
-    {
-        src: imgCard1,
-    },
-    {
-        src: imgCard2,
-    },
-    {
-        src: imgCard3,
-    },
-    {
-        src: imgCard4,
-    },
-    {
-        src: imgCard5,
-    },
-]
-
 
 
 
 export function Home() {
-    const [images, src] = React.useState(imagesCard);
     return (
         <div>
 
-            
+
 
             <Body>
                 <Header />
@@ -173,13 +154,13 @@ export function Home() {
                 </TitleTwo>
 
                 <DivCards>
-                    
-                        {imagesCard.map((imgC) => (
-                            <Cards>
-                                src={imgC.imagesCard}
-                            </Cards>
-                        ))}
-                    
+
+                    <Cards 
+                    src={imgCard2} 
+                    descr={"Vulputate felis purus viverra morbi facilisi eget"}
+                    nft={"3.19 ETH"}
+                    timer={"2:19 min left"} />
+
                 </DivCards>
 
             </Body>
